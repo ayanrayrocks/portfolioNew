@@ -1,0 +1,92 @@
+{
+  "menu": {
+    "hire_me_link": "mailto:rayayan1947@gmail.com?subject=🤘 Hi Ayan, I'd like to hire you",
+    "item_home": "Home",
+    "item_work": "Projects",
+    "item_about": "About",
+    "item_writing": "Experience",
+    "social_bluesky": "naf",
+    "social_instagram": "naf",
+    "social_github": "Visit my GitHub",
+    "social_email": "Send me an Email"
+  },
+  "hero": {
+    "title_main": "Hi, my ​<br>name is <b>Ayan</b><span class=\"dot\">.</span>",
+    "subtitle": "I'm a <b>Software Developer Engineer In Test</b> from Bangalore, India."
+  },
+  "about": {
+    "title": "<span>About <b>Me</b><span class=\"dot\">.</span></span>",
+    "description": "<b>Senior SDET | Automation Architect | AI-Driven Testing Enthusiast</b><br><br>I specialize in building high-performance automation frameworks using Playwright, Selenium, Java, and TestNG. With over 5 years of experience across companies like Makemytrip (redBus), InfoEdge (Naukri), and Cognizant, I’ve worked on large-scale systems that demand reliability, speed, and precision.<br><br>I focus on integrating AI into testing workflows, improving execution efficiency, and enabling faster debugging through intelligent insights. From UI automation to backend validation and CI/CD pipelines, I ensure products are production-ready with confidence.",
+    "button_text": "Download my resume",
+    "button_link": "./resources/resume.pdf"
+  },
+  "projects": {
+    "header_title": "Projects<span class=\"dot\">.</span>",
+    "header_desc": "Below are detailed case studies on my major frameworks and achievements.",
+    "list": [
+      {
+        "id": "project_1",
+        "title": "AI-Driven <b>Framework</b><span class=\"dot\">.</span>",
+        "desc1": "<b>A Hybrid Automation Framework with AI-Based Validation</b><br>",
+        "desc2": "Designed and developed a hybrid framework (Selenium + Playwright) with AI-driven visual validation, reducing execution time by 20% and improving test reliability.",
+        "button_text": "naf",
+        "button_link": "naf"
+      },
+      {
+        "id": "project_2",
+        "title": "Centralized <b>Playwright</b><span class=\"dot\">.</span>",
+        "desc1": "<b>Unified UI + API Automation with Network Monitoring</b><br>",
+        "desc2": "Built a centralized Playwright framework with real-time API tracking during UI tests, improving visibility into frontend-backend interactions.",
+        "button_text": "naf",
+        "button_link": "naf"
+      },
+      {
+        "id": "project_3",
+        "title": "Optimization <b>Engine</b><span class=\"dot\">.</span>",
+        "desc1": "<b>Test Execution Optimization Engine</b><br>",
+        "desc2": "Implemented an automated rerun mechanism for failed and skipped tests, significantly improving CI/CD pipeline efficiency.",
+        "button_text": "naf",
+        "button_link": "naf"
+      },
+      {
+        "id": "project_4",
+        "title": "Debugging <b>System</b><span class=\"dot\">.</span>",
+        "desc1": "<b>Analytics-Based Debugging System</b><br>",
+        "desc2": "Developed an AI-based system to convert analytics events into user interaction stories, helping teams debug faster and understand real user behavior.",
+        "button_text": "naf",
+        "button_link": "naf"
+      },
+      {
+        "id": "project_5",
+        "title": "Alert <b>Framework</b><span class=\"dot\">.</span>",
+        "desc1": "<b>Proactive Failure Detection & Notification System</b><br>",
+        "desc2": "Built an alerting system using Java Mail API to notify stakeholders about execution anomalies and failures in real-time.",
+        "button_text": "naf",
+        "button_link": "naf"
+      }
+    ]
+  },
+  "work_experience": {
+    "title": "<span>Work <b>Experience</b><span class=\"dot\">.</span></span>",
+    "description": "<div style='display:flex;align-items:center;margin-bottom:4px;'><img src='./assets/img/companies/redbus copy.png' style='width:80px;height:28px;vertical-align:middle;margin-right:10px;object-fit:contain;'><strong>Senior SDET</strong> &mdash; Makemytrip (redBus), Bangalore</div><span style='opacity:0.6;font-size:0.88em;margin-left:90px;display:block;margin-bottom:6px;'>Oct 2024 &ndash; Present</span>Led Hybrid Automation (Selenium + Playwright) for web &amp; mweb. Integrated AI-driven visual validation, cutting execution time by 20%. Built CI/CD alert systems and an AI framework for Google Analytics event processing.<br><br><div style='display:flex;align-items:center;margin-bottom:4px;'><img src='./assets/img/companies/naukriLogo.svg' style='width:80px;height:28px;vertical-align:middle;margin-right:10px;object-fit:contain;'><strong>Senior SDET</strong> &mdash; InfoEdge (Naukri.com), Noida</div><span style='opacity:0.6;font-size:0.88em;margin-left:90px;display:block;margin-bottom:6px;'>Feb 2022 &ndash; Oct 2024</span>Built automation frameworks using Selenium, Playwright, Java, TestNG &amp; Rest Assured. Designed centralized Playwright framework with network monitoring and contributed to Alert Monitoring Framework using Java Mail API.<br><br><div style='display:flex;align-items:center;margin-bottom:4px;'><img src='./assets/img/companies/cognizant copy.svg' style='width:80px;height:28px;vertical-align:middle;margin-right:10px;object-fit:contain;'><strong>Programmer Analyst</strong> &mdash; Cognizant, Kolkata</div><span style='opacity:0.6;font-size:0.88em;margin-left:90px;display:block;margin-bottom:6px;'>Aug 2020 &ndash; Feb 2022</span>Developed end-to-end test automation for a leading US insurance company. Hands-on with Agile, Jenkins CI/CD, DB testing, and cross-team collaboration."
+  },
+  "tools": {
+    "title": "<span>My <b>Tools</b><span class=\"dot\">.</span></span>",
+    "description": "Playwright – Advanced UI Automation<br>Selenium – Scalable Automation Frameworks<br>Java – Core Development & Framework Design<br>TestNG – Test Execution & Reporting<br>Rest Assured – API Testing<br>Jenkins – CI/CD Pipelines<br>Maven – Build Management<br>Git / GitHub / GitLab – Version Control<br>Elasticsearch / Kibana – Logging & Debugging<br>Postman – API Validation"
+  },
+  "skills": {
+    "title": "<span>My <b>Skills</b><span class=\"dot\">.</span></span>",
+    "description": "<b>Automation Architecture</b><br>Designing scalable, maintainable automation frameworks for complex systems.<br><br><b>API & Backend Testing</b><br>Deep validation of APIs, payloads, and system integrations.<br><br><b>AI in Testing</b><br>Leveraging AI for visual validation, analytics processing, and intelligent debugging.<br><br><b>Debugging & RCA</b><br>Strong expertise in root cause analysis using logs, network tracking, and analytics.<br><br><b>Performance Optimization</b><br>Reducing execution time and improving pipeline efficiency.<br><br><b>CI/CD & DevOps</b><br>Seamless integration of automation into pipelines with real-time reporting and alerts.<br><br><b>Collaboration</b><br>Working closely with developers, product teams, and stakeholders across geographies."
+  },
+  "statement": {
+    "title": "<span>Personal <b>Statement</b><span class=\"dot\">.</span></span>",
+    "description": "I build systems that don’t just test software — they improve it.<br>My focus is on scalability, reliability, and intelligent automation that delivers real impact."
+  },
+  "contact": {
+    "title": "naf",
+    "description": "naf"
+  },
+  "footer": {
+    "text": "Building intelligent automation. Breaking complexity. Shipping confidence."
+  }
+}
