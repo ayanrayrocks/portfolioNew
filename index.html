@@ -6,6 +6,14 @@ window.addEventListener('load', function() {
     // Remove loading screen
     var loader = document.querySelector('.loading');
     if (loader) { loader.classList.remove('loading--in'); setTimeout(function(){ loader.style.display='none'; }, 600); }
+    
+    var intro = document.getElementById('netflix-intro');
+    if (intro) { 
+      intro.style.opacity = '0'; 
+      intro.style.pointerEvents = 'none';
+      setTimeout(function(){ intro.remove(); }, 800); 
+    }
+
     // Remove is-loading class
     document.documentElement.classList.remove('is-loading');
     // Force all data-reveal elements to show
@@ -19,9 +27,115 @@ window.addEventListener('load', function() {
       el.style.opacity = '1';
       el.style.transform = 'none';
     });
-  }, 800);
+  }, 3200); // Intro anim completes at ~3.4s, start fading out slightly earlier
 });
-</script><a class="skip-link u-vhide" href="#main-content">Skip to content</a><div class="loading loading--in"><div class="loading__mask"></div><div class="loader"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div></div><div class="pagewrap"><div class="mainnav"><div class="logo-wrap"><a href="/"><span class="u-vhide">Back to the homepage</span> <span class="logo js-logo"><img src="./assets/img/custom/portfolio.png" alt="Ayan Ray" style="height:44px;width:auto;display:block;object-fit:contain;"></span></a></div><div class="menu-link"><button class="menu-link__trigger js-menu-trigger" aria-expanded="false" aria-controls="main-menu"><span class="menu-link__mask"><span class="menu-link__label menu-link__label--close js-menu-label-close" aria-hidden="true">Close</span> <span class="menu-link__label menu-link__label--open js-menu-label-open" aria-hidden="false">Menu</span></span></button></div><a class="hire-me" href="mailto:rayayan1947@gmail.com?subject=🤘 Hi Ayan, I\'d like to hire you" data-config-href="menu.hire_me_link"><div class="shade" data-drift="-4 -6" data-drift-center="y"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><path class="filled-path" d="M30.78,9.87c13.52,0,24.46,9.58,24.46,21.41a19.4,19.4,0,0,1-5,12.95h0l2.9,9.82L42.37,50.1h0a27.51,27.51,0,0,1-11.59,2.58,26.84,26.84,0,0,1-14-3.86C10.42,45,6.24,38.52,6.24,31.2,6.24,19.53,17.26,9.87,30.78,9.87Z"/></svg></div><div class="main"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><path class="stroke-path" d="M27.78,5.87c13.52,0,24.46,9.58,24.46,21.41a19.4,19.4,0,0,1-5,12.95h0l2.9,9.82L39.37,46.1h0a27.51,27.51,0,0,1-11.59,2.58,26.84,26.84,0,0,1-14-3.86C7.42,41,3.24,34.52,3.24,27.2,3.24,15.53,14.26,5.87,27.78,5.87Z"/></svg></div>Hire me</a></div><div class="main-menu js-menu" id="main-menu"><div class="main-menu__mask"></div><div class="main-menu__flyout"><div class="main-menu__inr wrap"><ul class="social-links"><li class="social-links__item"><a class="social-links__link social-links__link--gh" href="https://github.com/ayanrayrocks" rel="noopener noreferrer" target="_blank">Visit my GitHub</a></li><li class="social-links__item"><a class="social-links__link social-links__link--li" href="https://www.linkedin.com/in/ayan-ray-69ba77141/" rel="noopener noreferrer" target="_blank">Connect on LinkedIn</a></li><li class="social-links__item"><a class="social-links__link social-links__link--email" href="mailto:rayayan1947@gmail.com" rel="noopener noreferrer" target="_blank">Send me an Email</a></li></ul><ul class="main-menu__links primary-links"><li class="primary-links__item"><a aria-current="page" class="primary-links__link t-primary" href="/" aria-describedby="desc_home" data-config="menu.item_home">Home</a> <span id="desc_home" class="primary-links__summary">Back to the home page.</span></li><li class="primary-links__item"><a aria-current="page" class="primary-links__link t-primary" href="/work" aria-describedby="desc_work" data-config="menu.item_work">Work</a> <span id="desc_work" class="primary-links__summary">My featured projects.</span></li><li class="primary-links__item"><a class="primary-links__link t-primary" href="/about" aria-describedby="desc_about" data-config="menu.item_about">About</a> <span id="desc_about" class="primary-links__summary">A little about me and my background.</span></li><li class="primary-links__item"><a class="primary-links__link t-primary" href="/writing" aria-describedby="desc_writing" data-config="menu.item_writing">Writing</a> <span id="desc_writing" class="primary-links__summary">My career &amp; work history.</span></li></ul></div></div></div><main id="main-content" class="page-body page-body--header" tabindex="-1"><svg style="position:absolute;top:-900px;left:-900px;clip:rect(0,0,0,0)"><filter id="duotone_filter"><feColorMatrix type="matrix" result="grayscale" values="1 0 0 0 0
+</script>
+
+<style>
+/* ── Netflix Intro Animation ─────────────────────────────────── */
+.netflix-intro {
+  position: fixed;
+  inset: 0;
+  background: #f4f9fc;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.6s ease-in-out;
+}
+.netflix-intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(127, 0, 224, 0.05) 0%, rgba(244, 249, 252, 1) 80%);
+  z-index: -1;
+}
+
+.netflix-logo {
+  display: flex;
+  color: #0f1b61;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 14vw;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-shadow: 0 4px 70px rgba(15, 27, 97, 0.3);
+  transform-origin: center center;
+  animation: netflix-reveal 3.4s ease-in forwards;
+  position: relative;
+}
+
+.netflix-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: scale(2) perspective(500px) translateZ(100px);
+  animation: letter-drop 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+.netflix-letter-1 { animation-delay: 0.1s; }
+.netflix-letter-2 { animation-delay: 0.25s; }
+.netflix-letter-3 { animation-delay: 0.4s; }
+.netflix-letter-4 { animation-delay: 0.55s; }
+.netflix-letter-5 { animation-delay: 0.70s; }
+
+@keyframes letter-drop {
+  0% { transform: scale(2) translateY(-20px); opacity: 0; filter: blur(8px); }
+  60% { filter: blur(0px); }
+  100% { transform: scale(1) translateY(0); opacity: 1; filter: blur(0px); }
+}
+
+@keyframes netflix-reveal {
+  0%, 70% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  96% {
+    transform: scale(20);
+    opacity: 1;
+    filter: blur(2px);
+  }
+  100% {
+    transform: scale(25);
+    opacity: 0;
+    filter: blur(6px);
+  }
+}
+
+/* Optional flash effect simulating the colored ribbons bursting */
+.netflix-logo::after {
+  content: "HELLO";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: transparent;
+  background: repeating-linear-gradient(90deg, transparent 0%, #7f00e0 10%, rgba(255,255,255,0.8) 25%, #7f00e0 40%, transparent 50%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  opacity: 0;
+  animation: flare 3.4s ease-in forwards;
+}
+@keyframes flare {
+  0%, 70% { opacity: 0; background-position: 0% center; }
+  85% { opacity: 1; filter: brightness(150%) blur(1px); background-position: 100% center; }
+  100% { opacity: 0; background-position: 200% center; }
+}
+
+/* Hide standard loader visually during initial load but keep it around for main.js transition logic */
+#netflix-intro ~ .loading { display: none !important; }
+</style>
+
+<a class="skip-link u-vhide" href="#main-content">Skip to content</a>
+<div id="netflix-intro" class="netflix-intro">
+  <div class="netflix-logo">
+    <span class="netflix-letter netflix-letter-1">H</span>
+    <span class="netflix-letter netflix-letter-2">E</span>
+    <span class="netflix-letter netflix-letter-3">L</span>
+    <span class="netflix-letter netflix-letter-4">L</span>
+    <span class="netflix-letter netflix-letter-5">O</span>
+  </div>
+</div>
+<div class="loading loading--in"><div class="loading__mask"></div><div class="loader"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div></div><div class="pagewrap"><div class="mainnav"><div class="logo-wrap"><a href="/"><span class="u-vhide">Back to the homepage</span> <span class="logo js-logo"><img src="./assets/img/custom/portfolio.png" alt="Ayan Ray" style="height:44px;width:auto;display:block;object-fit:contain;"></span></a></div><div class="menu-link"><button class="menu-link__trigger js-menu-trigger" aria-expanded="false" aria-controls="main-menu"><span class="menu-link__mask"><span class="menu-link__label menu-link__label--close js-menu-label-close" aria-hidden="true">Close</span> <span class="menu-link__label menu-link__label--open js-menu-label-open" aria-hidden="false">Menu</span></span></button></div><a class="hire-me" href="mailto:rayayan1947@gmail.com?subject=🤘 Hi Ayan, I\'d like to hire you" data-config-href="menu.hire_me_link"><div class="shade" data-drift="-4 -6" data-drift-center="y"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><path class="filled-path" d="M30.78,9.87c13.52,0,24.46,9.58,24.46,21.41a19.4,19.4,0,0,1-5,12.95h0l2.9,9.82L42.37,50.1h0a27.51,27.51,0,0,1-11.59,2.58,26.84,26.84,0,0,1-14-3.86C10.42,45,6.24,38.52,6.24,31.2,6.24,19.53,17.26,9.87,30.78,9.87Z"/></svg></div><div class="main"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><path class="stroke-path" d="M27.78,5.87c13.52,0,24.46,9.58,24.46,21.41a19.4,19.4,0,0,1-5,12.95h0l2.9,9.82L39.37,46.1h0a27.51,27.51,0,0,1-11.59,2.58,26.84,26.84,0,0,1-14-3.86C7.42,41,3.24,34.52,3.24,27.2,3.24,15.53,14.26,5.87,27.78,5.87Z"/></svg></div>Hire me</a></div><div class="main-menu js-menu" id="main-menu"><div class="main-menu__mask"></div><div class="main-menu__flyout"><div class="main-menu__inr wrap"><ul class="social-links"><li class="social-links__item"><a class="social-links__link social-links__link--gh" href="https://github.com/ayanrayrocks" rel="noopener noreferrer" target="_blank">Visit my GitHub</a></li><li class="social-links__item"><a class="social-links__link social-links__link--li" href="https://www.linkedin.com/in/ayan-ray-69ba77141/" rel="noopener noreferrer" target="_blank">Connect on LinkedIn</a></li><li class="social-links__item"><a class="social-links__link social-links__link--email" href="mailto:rayayan1947@gmail.com" rel="noopener noreferrer" target="_blank">Send me an Email</a></li></ul><ul class="main-menu__links primary-links"><li class="primary-links__item"><a aria-current="page" class="primary-links__link t-primary" href="/" aria-describedby="desc_home" data-config="menu.item_home">Home</a> <span id="desc_home" class="primary-links__summary">Back to the home page.</span></li><li class="primary-links__item"><a aria-current="page" class="primary-links__link t-primary" href="/work" aria-describedby="desc_work" data-config="menu.item_work">Work</a> <span id="desc_work" class="primary-links__summary">My featured projects.</span></li><li class="primary-links__item"><a class="primary-links__link t-primary" href="/about" aria-describedby="desc_about" data-config="menu.item_about">About</a> <span id="desc_about" class="primary-links__summary">A little about me and my background.</span></li><li class="primary-links__item"><a class="primary-links__link t-primary" href="/writing" aria-describedby="desc_writing" data-config="menu.item_writing">Writing</a> <span id="desc_writing" class="primary-links__summary">My career &amp; work history.</span></li></ul></div></div></div><main id="main-content" class="page-body page-body--header" tabindex="-1"><svg style="position:absolute;top:-900px;left:-900px;clip:rect(0,0,0,0)"><filter id="duotone_filter"><feColorMatrix type="matrix" result="grayscale" values="1 0 0 0 0
                   1 0 0 0 0
                   1 0 0 0 0
                   0 0 0 1 0"/><feComponentTransfer color-interpolation-filters="sRGB" result="duotone"><feFuncR type="table" tableValues="-0.054901960784313725 0.7647058823529411"></feFuncR><feFuncG type="table" tableValues="0.32941176470588235 0.9647058823529412"></feFuncG><feFuncB type="table" tableValues="0.45098039215686275 1.0274509803921568"></feFuncB><feFuncA type="table" tableValues="0 1"></feFuncA></feComponentTransfer></filter></svg><div class="section"><div style="position:relative" data-prlx="0 -0.125"><div class="avatar-bg"><div class="avatar-wrap"><div class="bar-outer" data-prlx="0 -0.175"><div class="bar stripes" data-drift-center="x" data-drift="-10 -10"></div></div><div class="avatar avatar--intro avatar--ready"><svg class="base" viewBox="0 0 702 726"><defs><clipPath id="clip--chin"><path class="svg-blank" d="M351,538.29a133.13,133.13,0,0,1-53.48-11.11v70.14H404.49V527.18A133.22,133.22,0,0,1,351,538.29Z"/></clipPath><clipPath id="clip--eyebrow-l"><rect class="svg-blank" x="224.5" y="213.67" width="87.98" height="87.98"/></clipPath><clipPath id="clip--eyebrow-r"><rect class="svg-blank" x="376.36" y="220.19" width="98.52" height="85.33"/></clipPath><pattern id="pattern--stubble" data-name="SVGID 4 " width="83.3" height="97.7" patternTransform="matrix(0.09, 0, 0, -0.09, -7212.72, 6963.89)" patternUnits="userSpaceOnUse" viewBox="0 0 83.3 97.7"><rect class="svg-blank" width="83.3" height="97.7"/><rect class="svg-blank" width="83.3" height="97.7"/><rect class="svg-fill" x="41.6" y="-24.5" width="83.3" height="48.9"/><circle class="svg-bg" cx="66.3" cy="-0.3" r="17"/><rect class="svg-fill" x="-41.7" y="-24.5" width="83.3" height="48.9"/><rect class="svg-fill" y="24.3" width="83.3" height="48.9"/><circle class="svg-bg" cx="24.6" cy="48.6" r="17"/><rect class="svg-fill" x="41.6" y="73.2" width="83.3" height="48.9"/><circle class="svg-bg" cx="66.3" cy="97.4" r="17"/><rect class="svg-fill" x="-41.7" y="73.2" width="83.3" height="48.9"/></pattern></defs></svg><div class="avatar__animwrap"><div class="layer"><div class="layer head__rotation"><svg viewBox="0 0 702 726"><path class="bgmask mask__head" d="M539.56,330a34.69,34.69,0,0,0-19.39-18.39l-6.88-2.53a33.49,33.49,0,0,0-15.39-2.32V294h-1c2.83-9.45,5.16-22.14,7.05-38.3,2.38-20.48,3.18-39.58,3.21-40.4l.09-2.22,21,11.38-9.74-27.08c-7.53-20.95-17.9-38.58-31-52.75l16.93,5.19-13.62-24C472.1,92.65,445,73.13,411.47,68.2l10.84-6.61-33.48-2.85a140.09,140.09,0,0,0-34.67,1.18l9.89-9.21-35.32,5.42C286,62.69,252.41,82.93,229,116.29c-17.63,25.13-24.75,51.62-27.45,65.3a34.93,34.93,0,0,0,4.26,26.67l-6.33,1.49-.19,8.5c-.21,9.27-.74,50.19,5.12,75.75h-.32v12.78a33.55,33.55,0,0,0-15.44,2.31l-6.8,2.5-.11,0a34.93,34.93,0,0,0-20.16,45c3.32,9,9.87,26.53,13.2,35.41a35.1,35.1,0,0,0,37.06,22.55v6.74c0,76.73,62.42,139.17,139.17,139.18S490.19,498.06,490.2,421.32V414.6a35.11,35.11,0,0,0,36.9-22.54c3.34-8.91,9.87-26.41,13.19-35.37A34.69,34.69,0,0,0,539.56,330Z"/></svg></div><div><svg viewBox="0 0 702 726"><g class="backgroundMask"><path class="bgmask mask__shoulders" d="M588.92,668.08a85,85,0,0,0-8.71-31.4c-7.52-15-23-34-54.27-39.1-45.62-7.42-75.42-17.86-87.34-22.57-3.41-9.62-9.35-27.46-12.91-44.29A11,11,0,0,0,408.62,524H295.42a11,11,0,0,0-17.06,6.72,368.9,368.9,0,0,1-12.06,41.84l-.62.28c-5.72,2.55-37,15.71-92.58,24.74-31.23,5.08-46.75,24.07-54.27,39.1a85.13,85.13,0,0,0-8.7,31.4l0,.35.61,17a17.1,17.1,0,0,0,17.66,16.45,16.83,16.83,0,0,0,6-1.33,277.13,277.13,0,0,1,82.46-20c45.92-3.82,89.17,4.51,128.55,24.76,34.77,17.85,73,23.82,108.61,23.82,48.52,0,92.08-11.09,115.1-18.24a29,29,0,0,0,20.31-28.66Z"/></g><g class="shoulders"><path class="shading svg-fill" d="M585.93,665.46s-2.24-53.35-55.43-62c-54-8.78-86-21.62-93.73-24.93,1,18-52,61.2-80.63,61.2h-.21c-28.89,0-82.53-43.93-80.59-61.67-5.25,2.34-37.82,16.14-94.79,25.4-53.2,8.66-55.43,62-55.43,62l.59,16.67a8.07,8.07,0,0,0,11.2,7.15c30.86-13,123.49-43.91,218.61,5,80,41.08,180,16.46,216.92,5a19.94,19.94,0,0,0,14-19.74Z"></path><path d="M426.35,566.53s33.95,15.6,97.85,25.75c54.46,8.66,56.75,62,56.75,62" class="svg-stroke"></path><path d="M277,566.53s-34,15.6-97.85,25.75c-54.46,8.66-56.75,62-56.75,62" class="svg-stroke"></path></g><g class="neck"><g class="mask mask--chin"><path class="neck__shadow svg-fill" d="M298.68,462v65.2c1.52,17.26,24.37,31,52.33,31s50.78-13.71,52.3-31h.08V462Z"/></g><path class="svg-stroke" d="M290.14,522.34c-5.23,24.68-15.39,51.07-15.39,51.07-3.19,16,48.49,57.59,76.17,57.59h.2c27.68,0,79.36-41.62,76.17-57.59,0,0-10.16-26.39-15.38-51.08"/><path class="neck__adamsapple svg-stroke" d="M332.93,569.71a28.43,28.43,0,0,0,36.14,0"/></g></svg></div></div><div class="head layer"><div class="head__y"><div class="head__yaw"><div class="head__rotation"><div class="shading face-tilt"><svg id="" class="" viewBox="0 0 702 726"><ellipse class="svg-fill" cx="211.09" cy="371.36" rx="8.4" ry="12.43"/><ellipse class="svg-fill" cx="500.51" cy="371.36" rx="8.4" ry="12.43"/></svg></div><div class="beard"><svg id="" class="" viewBox="0 0 702 726"><path class="beard__tache svg-pattern" d="M365.9,425.2a23.71,23.71,0,0,1-29.83,0c-25.53,1.6-44.4,18.82-44.4,18.82A187.24,187.24,0,0,0,410,444S391.3,426.82,365.9,425.2Z"/><path class="beard__chin svg-pattern" d="M351,514.25h0c-68.51,0-124-46.38-124-103.6v3.58A124.06,124.06,0,0,0,351,538.29h0A124.06,124.06,0,0,0,475.08,414.23v-3.58C475.08,467.87,419.54,514.25,351,514.25Z"/><rect class="beard__lip svg-pattern" x="325.2" y="480.7" width="46.65" height="12.1"/></svg></div><div class="eyebrows face-tilt"><div class="eyebrow eyebrows__left"><svg id="" class="" viewBox="0 0 702 726"><path class="svg-fill" d="M302.61,286.93C290,280.19,257.47,268.87,225,301.6v75.56h85.51V277.83l-1,5.81A4.8,4.8,0,0,1,302.61,286.93Z"/><path class="brow svg-fill-stroke" d="M310.54,277.83l-1,5.81a4.8,4.8,0,0,1-7,3.29c-12.68-6.77-45.49-18.19-78.11,15.2,1.65-17.62,28.26-47.23,83-29.23A4.37,4.37,0,0,1,310.54,277.83Z"/></svg></div><div class="eyebrow eyebrows__right"><svg id="" class="" viewBox="0 0 702 726"><path class="svg-fill" d="M386.13,276.58a4.74,4.74,0,0,1-6.72-3.33v85.5h94.43V291.64C442.9,257.6,399,270.43,386.13,276.58Z"/><path class="brow svg-fill-stroke" d="M378.58,267.19l.78,5.81a4.74,4.74,0,0,0,6.77,3.58c13-6.2,57.4-19.17,88.37,15.77-3.29-35.13-44.14-43.45-92.72-29.9A4.33,4.33,0,0,0,378.58,267.19Z"/></svg></div><div class="browmask"><svg id="" class="" viewBox="0 0 702 726"><path class="bgmask" d="M375.2,305c-4.7-1.7-11.5-2.8-21-2.8-4.6,0-14.8.3-23.2,2.8H216.1v42.9c0,28.4,20.2,45.1,55.6,46.2v.1h3.8V394c35.4-1.1,55.6-17.8,55.6-46.2V319c2.5-1.4,9.9-3.4,21-3.6,12.1-.3,18.8,1.7,20.8,3v29.5c0,28.4,20.2,45.1,55.6,46.2v.1h3.8V394c35.4-1.1,55.6-17.8,55.6-46.2V305Z"/><path class="svg-fill" d="M498.27,222.15l-11.87-3c-.71-2-1.44-4-2.13-5.9.68.68,1.26,1.35,1.94,2a169.32,169.32,0,0,0-4.45-19.16,212.14,212.14,0,0,1,28.16,12.68c-14.52-40.36-39.2-63.5-68-75.11a175.25,175.25,0,0,1,42,7.45C457.56,94.72,417.39,84.84,378,91.52c4.55-3.1,9.78-6.39,15.49-9.87-31.84-2.71-55.85,5.9-73.66,18.2,5-5.52,11-14.33,18-20.81C247.63,92.88,227.69,171,223.53,192.28c-4.77,19.32,15.49,30.1,15.49,30.1s39.68-22.17,95.33-33.69c25.65,3.88,52.46,10,68.72,24.49A167.64,167.64,0,0,0,389.71,182c8.71-.1,17.62,0,26.62.58,25.47,8.3,52.25,22.14,69.88,37.55-.24,6.42-1.59,42.5-3.55,86.33H379.26c-4.55-1.64-11.13-2.71-20.32-2.71-4.46,0-14.33.29-22.46,2.71H231.39c3.58-48,6.56-84.68,6.56-84.68l-16.35,3.87s-1.39,61.69,7.91,80.81h-4.24V348c0,27.49,19.55,43.65,53.82,44.72v.1h3.67v-.2c34.27-1.06,53.82-17.23,53.82-44.71V320c2.26-1.26,8.68-3,18.29-3.42V434.29c.32,0,
