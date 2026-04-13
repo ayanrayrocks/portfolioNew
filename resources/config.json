@@ -17,8 +17,8 @@
   "about": {
     "title": "<span>About <b>Me</b><span class=\"dot\">.</span></span>",
     "description": "<b>Senior SDET | Automation Architect | AI-Driven Testing Enthusiast</b><br><br>I specialize in building high-performance automation frameworks using Playwright, Selenium, Java, and TestNG. With over 5 years of experience across companies like Makemytrip (redBus), InfoEdge (Naukri), and Cognizant, I’ve worked on large-scale systems that demand reliability, speed, and precision.<br><br>I focus on integrating AI into testing workflows, improving execution efficiency, and enabling faster debugging through intelligent insights. From UI automation to backend validation and CI/CD pipelines, I ensure products are production-ready with confidence.",
-    "button_text": "Download my resume",
-    "button_link": "./resources/resume.pdf"
+    "button_text": "",
+    "button_link": ""
   },
   "projects": {
     "header_title": "Projects<span class=\"dot\">.</span>",
