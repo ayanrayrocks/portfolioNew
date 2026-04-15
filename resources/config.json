@@ -1,22 +1,22 @@
 {
   "menu": {
-    "hire_me_link": "mailto:rayayan1947@gmail.com?subject=🤘 Hi Ayan, I'd like to hire you",
+    "hire_me_link": "mailto:rayayan1947@gmail.com?subject=\ud83e\udd18 Hi Ayan, I'd like to hire you",
     "item_home": "Home",
-    "item_work": "Projects",
+    "item_work": "Experience",
     "item_about": "About",
-    "item_writing": "Experience",
+    "item_writing": "Projects",
     "social_bluesky": "naf",
     "social_instagram": "naf",
     "social_github": "Visit my GitHub",
     "social_email": "Send me an Email"
   },
   "hero": {
-    "title_main": "Hi, my ​<br>name is <b>Ayan</b><span class=\"dot\">.</span>",
+    "title_main": "Hi, my \u200b<br>name is <b>Ayan</b><span class=\"dot\">.</span>",
     "subtitle": "I'm a <b>Software Developer Engineer In Test</b> from Bangalore, India."
   },
   "about": {
     "title": "<span>About <b>Me</b><span class=\"dot\">.</span></span>",
-    "description": "<b>Senior SDET | Automation Architect | AI-Driven Testing Enthusiast</b><br><br>I specialize in building high-performance automation frameworks using Playwright, Selenium, Java, and TestNG. With over 5 years of experience across companies like Makemytrip (redBus), InfoEdge (Naukri), and Cognizant, I’ve worked on large-scale systems that demand reliability, speed, and precision.<br><br>I focus on integrating AI into testing workflows, improving execution efficiency, and enabling faster debugging through intelligent insights. From UI automation to backend validation and CI/CD pipelines, I ensure products are production-ready with confidence.",
+    "description": "I'm a developer who genuinely loves the craft of coding. My journey in the tech world began in 2020, and since then, I've been fascinated by the endless possibilities of building software that works and scales.<br><br>When I'm not writing code or building automation frameworks, you'll likely find me out and about with my camera. I have a deep passion for photography—capturing the world through my lens is how I find balance and inspiration. Scroll down to see some of my favorite moments.",
     "button_text": "",
     "button_link": ""
   },
@@ -66,21 +66,45 @@
       }
     ]
   },
+  "work_page": {
+    "header_title": "My <b>Experience</b><span class=\"dot\">.</span>",
+    "header_desc": "With more than 5 years of experience as a Software Development Engineer in Test (SDET), I specialize in building robust CI/CD pipelines, hybrid automation frameworks for Web, mWeb, and API ecosystems, and harnessing Agentic AI to optimize testing environments. Below is a detailed overview of my career.",
+    "list": [
+      {
+        "id": "item_1",
+        "title": "Makemytrip <b>(redBus)</b><span class=\"dot\">.</span>",
+        "desc1": "<b>Senior SDET</b> &bull; Bangalore &bull; <i>Oct 2024 - Present</i>",
+        "desc2": "<ul class='flow' style='padding-left: 20px; list-style-type: disc; margin-top: 15px;'><li>Led the design and development of Hybrid Automation frameworks (Selenium+Playwrite) for the web and Mweb application.</li><li>Integrated AI-driven visual validation for UI testing, leveraging prompt-based validation to reduce manual logic implementation, accelerate execution, and enhance test reliability, this reduces the execution time by 20%.</li><li>Implemented automated rerun mechanism for failed and skipped test cases, significantly reducing execution time and improving pipeline efficiency.</li><li>Managed and delivered user stories across multiple geographies for web applications, ensuring timely releases and alignment with business requirements.</li><li>Integrated a mailer service within CI/CD pipelines to deliver execution status reports upon job completion and configured automated alert notifications when failed/skipped test cases exceeded defined thresholds.</li><li>Developed an AI-based framework to process Google Analytics events, automatically generating interaction stories for faster RCA.</li></ul>"
+      },
+      {
+        "id": "item_2",
+        "title": "InfoEdge <b>(Naukri.com)</b><span class=\"dot\">.</span>",
+        "desc1": "<b>Senior SDET</b> &bull; Noida &bull; <i>Feb 2022 - Oct 2024</i>",
+        "desc2": "<ul class='flow' style='padding-left: 20px; list-style-type: disc; margin-top: 15px;'><li>Led the design and development of multiple automation frameworks across projects using Selenium, Cucumber, Playwright, Java, TestNG, Maven, and POM.</li><li>Designed and implemented API automation framework with Rest Assured for validating backend APIs across both Production and Test environments.</li><li>Monitored and maintained automation suites in live environments, ensuring stability through daily execution and script maintenance.</li><li>Configured and optimized CI/CD pipelines with Jenkins, managing jobs, handling pull requests, and performing code reviews.</li><li>Developed a centralized Playwright framework with integrated network monitoring of APIs during UI automation.</li><li>Contributed to the creation of an Alert Monitoring Framework using Java and Java Mail API.</li><li>Actively participated in grooming sessions with Product Owners to refine requirements and ensure test coverage.</li><li>Experienced in test planning, case design, script development, and aligned with project-specific test strategies.</li><li>Investigated live Aura logs for monitoring, raised bugs with detailed analysis, and collaborated with developers for root cause analysis.</li></ul>"
+      },
+      {
+        "id": "item_3",
+        "title": "Cognizant<span class=\"dot\">.</span>",
+        "desc1": "<b>Programmer Analyst</b> &bull; Kolkata &bull; <i>Aug 2020 - Feb 2022</i>",
+        "desc2": "<ul class='flow' style='padding-left: 20px; list-style-type: disc; margin-top: 15px;'><li>Designed and Developed Framework for One of the Leading Insurance Companies in the USA.</li><li>Creation of end-to-end testing test cases and automating them.</li><li>Maintaining automation script and keep updating for new feature releases.</li><li>Validating and Testing Database testing.</li><li>Collaborated closely with engineers and business stakeholders across the development and testing life cycle.</li><li>Experience in Agile development environment using CI/CD tools like Jenkins.</li><li>Hands-on experience in testing Web applications.</li><li>Updated Daily Status and Weekly Status Reports for stakeholders.</li></ul>"
+      }
+    ]
+  },
   "work_experience": {
     "title": "<span>Work <b>Experience</b><span class=\"dot\">.</span></span>",
     "description": "<div style='display:flex;align-items:center;margin-bottom:4px;'><img src='./assets/img/companies/redbus copy.png' style='width:80px;height:28px;vertical-align:middle;margin-right:10px;object-fit:contain;'><strong>Senior SDET</strong> &mdash; Makemytrip (redBus), Bangalore</div><span style='opacity:0.6;font-size:0.88em;margin-left:90px;display:block;margin-bottom:6px;'>Oct 2024 &ndash; Present</span>Led Hybrid Automation (Selenium + Playwright) for web &amp; mweb. Integrated AI-driven visual validation, cutting execution time by 20%. Built CI/CD alert systems and an AI framework for Google Analytics event processing.<br><br><div style='display:flex;align-items:center;margin-bottom:4px;'><img src='./assets/img/companies/naukriLogo.svg' style='width:80px;height:28px;vertical-align:middle;margin-right:10px;object-fit:contain;'><strong>Senior SDET</strong> &mdash; InfoEdge (Naukri.com), Noida</div><span style='opacity:0.6;font-size:0.88em;margin-left:90px;display:block;margin-bottom:6px;'>Feb 2022 &ndash; Oct 2024</span>Built automation frameworks using Selenium, Playwright, Java, TestNG &amp; Rest Assured. Designed centralized Playwright framework with network monitoring and contributed to Alert Monitoring Framework using Java Mail API.<br><br><div style='display:flex;align-items:center;margin-bottom:4px;'><img src='./assets/img/companies/cognizant copy.svg' style='width:80px;height:28px;vertical-align:middle;margin-right:10px;object-fit:contain;'><strong>Programmer Analyst</strong> &mdash; Cognizant, Kolkata</div><span style='opacity:0.6;font-size:0.88em;margin-left:90px;display:block;margin-bottom:6px;'>Aug 2020 &ndash; Feb 2022</span>Developed end-to-end test automation for a leading US insurance company. Hands-on with Agile, Jenkins CI/CD, DB testing, and cross-team collaboration."
   },
   "tools": {
-    "title": "<span>My <b>Tools</b><span class=\"dot\">.</span></span>",
-    "description": "Playwright – Advanced UI Automation<br>Selenium – Scalable Automation Frameworks<br>Java – Core Development & Framework Design<br>TestNG – Test Execution & Reporting<br>Rest Assured – API Testing<br>Jenkins – CI/CD Pipelines<br>Maven – Build Management<br>Git / GitHub / GitLab – Version Control<br>Elasticsearch / Kibana – Logging & Debugging<br>Postman – API Validation"
+    "title": "My <b>Toolkit</b><span class=\"dot\">.</span>",
+    "description": "Playwright \u2013 Advanced UI Automation<br>Selenium \u2013 Scalable Automation Frameworks<br>Java \u2013 Core Development & Framework Design<br>TestNG \u2013 Test Execution & Reporting<br>Rest Assured \u2013 API Testing<br>Jenkins \u2013 CI/CD Pipelines<br>Maven \u2013 Build Management<br>Git / GitHub / GitLab \u2013 Version Control<br>Elasticsearch / Kibana \u2013 Logging & Debugging<br>Postman \u2013 API Validation"
   },
   "skills": {
-    "title": "<span>My <b>Skills</b><span class=\"dot\">.</span></span>",
+    "title": "Core <b>Expertise</b><span class=\"dot\">.</span>",
     "description": "<b>Automation Architecture</b><br>Designing scalable, maintainable automation frameworks for complex systems.<br><br><b>API & Backend Testing</b><br>Deep validation of APIs, payloads, and system integrations.<br><br><b>AI in Testing</b><br>Leveraging AI for visual validation, analytics processing, and intelligent debugging.<br><br><b>Debugging & RCA</b><br>Strong expertise in root cause analysis using logs, network tracking, and analytics.<br><br><b>Performance Optimization</b><br>Reducing execution time and improving pipeline efficiency.<br><br><b>CI/CD & DevOps</b><br>Seamless integration of automation into pipelines with real-time reporting and alerts.<br><br><b>Collaboration</b><br>Working closely with developers, product teams, and stakeholders across geographies."
   },
   "statement": {
-    "title": "<span>Personal <b>Statement</b><span class=\"dot\">.</span></span>",
-    "description": "I build systems that don’t just test software — they improve it.<br>My focus is on scalability, reliability, and intelligent automation that delivers real impact."
+    "title": "My <b>Vision</b><span class=\"dot\">.</span>",
+    "description": "I build systems that don\u2019t just test software \u2014 they improve it.<br>My focus is on scalability, reliability, and intelligent automation that delivers real impact."
   },
   "contact": {
     "title": "naf",

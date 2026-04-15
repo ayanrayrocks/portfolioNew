@@ -54,9 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
       // Traverse the JSON to get flat keys like "hero.title_main"
       const traverse = (obj, path = '') => {
         if (Array.isArray(obj)) {
-          // Only handle the projects array specially
+          // Handle arrays dynamically using the path
           obj.forEach(item => {
-             const basePath = `projects.${item.id}`;
+             // If path ends with ".list", remove it so mapping matches HTML data attributes
+             const cleanPath = path.endsWith('.list') ? path.substring(0, path.length - 5) : path;
+             const basePath = `${cleanPath}.${item.id}`;
              Object.keys(item).forEach(k => {
                 if (k !== 'id') traverse(item[k], `${basePath}.${k}`);
              });

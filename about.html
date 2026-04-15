@@ -1,0 +1,238 @@
+<!doctype html><html class="no-js" lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>About Me - Ayan Ray</title><meta name="description" content="Software Developer & Photographer. Starting since 2020."><meta name="theme-color" content="#c8e6c9"><meta name="color-scheme" content="only light"><link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png"><link rel="icon" type="image/png" href="./assets/img/favicon.ico"><link href="https://fonts.googleapis.com/css?family=Bitter:400,700&display=swap" rel="stylesheet"><link rel="stylesheet" href="./assets/css/styles.css"><style id="theme">
+  :root {
+    --bg: #f0fbf4;
+    --line: #2e7d32;
+    --fill: #c8e6c9;
+    --text: #0d2310;
+    --subtext: #4caf50;
+    --duo: #c8e6c9;
+  }
+  .stripes {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22.93 22.93'%3E%3Cpolygon fill='%23c8e6c9' points='0 8.18 14.75 22.93 22.74 22.93 0 0.19 0 8.18'/%3E%3Cpolygon fill='%23c8e6c9' points='22.93 8.37 22.93 0.38 22.56 0 14.56 0 22.93 8.37'/%3E%3C/svg%3E");
+    background-size: 11px;
+    opacity: .6;
+  }
+  .dots {
+    background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 22.9 22.9' style='enable-background:new 0 0 22.9 22.9;' xml:space='preserve'%3E%3Ccircle fill='%23c8e6c9' cx='5.7' cy='5.9' r='3'/%3E%3Ccircle fill='%23c8e6c9' cx='17.2' cy='17.2' r='3'/%3E%3C/svg%3E");
+    background-size: 12px;
+  }
+
+  /* Split-panel layout overrides */
+  .page-body--bio .panels { align-items: flex-start; }
+  .panels__main .flow p { font-size: 2.2rem; line-height: 1.7; margin-bottom: 2em; color: var(--text); }
+  @media (max-width: 1000px) { .panels__main .flow p { font-size: 1.8rem; } }
+
+  /* Photography Gallery Staggered Grid */
+  .photo-gallery {
+    position: relative;
+    padding: 100px 0;
+    margin: 80px 0;
+    overflow: hidden;
+  }
+  
+  .photo-gallery__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  .photo-grid {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 50px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .photo-grid__col {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 50%;
+  }
+
+  .photo-grid__col--right {
+    margin-top: 15vh; /* This creates the staggered masonry look */
+  }
+
+  .photo-item {
+    position: relative;
+    width: 100%;
+    background: rgba(0,0,0,0.05); /* Soft placeholder */
+    overflow: hidden;
+    /* Custom reveal animation initial state */
+    opacity: 0;
+    transform: translateY(60px) scale(0.98);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Reveal logic linked to main.js data-reveal="is-onscreen" trigger */
+  .photo-item.is-onscreen {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+  }
+
+  /* Staggered delays for photos in columns */
+  .photo-grid__col--left .photo-item:nth-child(1) { transition-delay: 0.1s; }
+  .photo-grid__col--left .photo-item:nth-child(2) { transition-delay: 0.3s; }
+  .photo-grid__col--right .photo-item:nth-child(1) { transition-delay: 0.2s; }
+  .photo-grid__col--right .photo-item:nth-child(2) { transition-delay: 0.4s; }
+
+  .photo-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .photo-item:hover img {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .photo-grid {
+      flex-direction: column;
+      gap: 30px;
+    }
+    .photo-grid__col {
+      width: 100%;
+      margin-top: 0 !important;
+    }
+    .photo-gallery {
+      padding: 40px 0;
+    }
+  }
+</style>
+<script>
+  document.querySelector('html').classList.add('js');
+  document.querySelector('html').classList.remove('no-js');
+</script></head><body>
+
+<a class="skip-link u-vhide" href="#main-content">Skip to content</a>
+
+<div class="pagewrap">
+  <div class="mainnav">
+    <div class="logo-wrap">
+      <a href="/" data-rekishi-skip="true">
+        <span class="u-vhide">Back to the homepage</span>
+        <span class="logo"><img src="./assets/img/custom/portfolio.png" alt="Ayan Ray" style="height:44px;width:auto;display:block;object-fit:contain;"></span>
+      </a>
+    </div>
+    <div class="menu-link">
+      <button class="menu-link__trigger js-menu-trigger" aria-expanded="false" aria-controls="main-menu">
+        <span class="menu-link__mask">
+          <span class="menu-link__label menu-link__label--close js-menu-label-close" aria-hidden="true">Close</span>
+          <span class="menu-link__label menu-link__label--open js-menu-label-open" aria-hidden="false">Menu</span>
+        </span>
+      </button>
+    </div>
+    <a class="hire-me" href="mailto:rayayan1947@gmail.com?subject=🤘 Hi Ayan, I'd like to hire you" data-config-href="menu.hire_me_link">
+      <div class="shade" data-drift="-4 -6" data-drift-center="y">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><path class="filled-path" d="M30.78,9.87c13.52,0,24.46,9.58,24.46,21.41a19.4,19.4,0,0,1-5,12.95h0l2.9,9.82L42.37,50.1h0a27.51,27.51,0,0,1-11.59,2.58,26.84,26.84,0,0,1-14-3.86C10.42,45,6.24,38.52,6.24,31.2,6.24,19.53,17.26,9.87,30.78,9.87Z"/></svg>
+      </div>
+      <div class="main">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><path class="stroke-path" d="M27.78,5.87c13.52,0,24.46,9.58,24.46,21.41a19.4,19.4,0,0,1-5,12.95h0l2.9,9.82L39.37,46.1h0a27.51,27.51,0,0,1-11.59,2.58,26.84,26.84,0,0,1-14-3.86C7.42,41,3.24,34.52,3.24,27.2,3.24,15.53,14.26,5.87,27.78,5.87Z"/></svg>
+      </div>
+      Hire me
+    </a>
+  </div>
+
+  <div class="main-menu js-menu" id="main-menu">
+    <div class="main-menu__mask"></div>
+    <div class="main-menu__flyout">
+      <div class="main-menu__inr wrap">
+        <ul class="social-links">
+          <li class="social-links__item"><a class="social-links__link social-links__link--gh" href="https://github.com/ayanrayrocks" rel="noopener noreferrer" target="_blank">Visit my GitHub</a></li>
+          <li class="social-links__item"><a class="social-links__link social-links__link--li" href="https://www.linkedin.com/in/ayan-ray-69ba77141/" rel="noopener noreferrer" target="_blank">Connect on LinkedIn</a></li>
+          <li class="social-links__item"><a class="social-links__link social-links__link--email" href="mailto:rayayan1947@gmail.com" rel="noopener noreferrer" target="_blank">Send me an Email</a></li>
+        </ul>
+        <ul class="main-menu__links primary-links">
+          <li class="primary-links__item"><a class="primary-links__link t-primary" href="/" data-rekishi-skip="true" aria-describedby="desc_home" data-config="menu.item_home">Home</a> <span id="desc_home" class="primary-links__summary">Back to the home page.</span></li>
+          <li class="primary-links__item"><a class="primary-links__link t-primary" href="./work.html" data-rekishi-skip="true" aria-describedby="desc_work" data-config="menu.item_work">Work</a> <span id="desc_work" class="primary-links__summary">My featured projects.</span></li>
+          <li class="primary-links__item"><a aria-current="page" class="primary-links__link t-primary" href="./about.html" data-rekishi-skip="true" aria-describedby="desc_about" data-config="menu.item_about">About</a> <span id="desc_about" class="primary-links__summary">A little about me and my background.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content" class="page-body page-body--header page-body--bio" tabindex="-1">
+    
+    <header class="page-header page-header--masthead">
+      <div class="page-header__inr">
+        <div class="page-header__content" data-reveal="is-onscreen">
+          <h1 class="page-header__title lh-tight t-primary t-outline">
+            About <b>Me</b><span class="dot">.</span>
+          </h1>
+          <p class="page-header__lede lh-loose t-primary" data-config="about.description">
+            Loading...
+          </p>
+          <span class="page-header__scroll" aria-hidden="true"><span><span>S</span> <span>c</span> <span>r</span> <span>o</span> <span>l</span> <span>l</span></span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Bio Section -->
+    <div class="panels chunk" data-reveal="is-onscreen">
+      <div class="panels__side">
+        <div class="dot-header">
+          <div class="dot-header__dots" data-drift="-10 -10"><div class="dots"></div></div>
+          <div class="dot-header__content">
+            <h2 class="t-heading t-medium:s t-big:m t-bigger:l">Who I am.</h2>
+          </div>
+        </div>
+      </div>
+      <div class="panels__main">
+        <div class="flow reveal-content">
+          <p data-config="about.description">Loading my personal story...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photography Section -->
+    <section class="photo-gallery chunk">
+      <div class="photo-gallery__bg dots"></div>
+      
+      <div class="article-heading wrap">
+        <h2 class="article-heading__title t-heading t-medium:s t-big:m t-bigger:l">Photography<b>.</b></h2>
+      </div>
+
+      <div class="photo-grid">
+        <div class="photo-grid__col photo-grid__col--left">
+           <!-- Dynamic images will be injected here -->
+        </div>
+        <div class="photo-grid__col photo-grid__col--right">
+           <!-- Dynamic images will be injected here -->
+        </div>
+      </div>
+
+      <footer class="photo-grid__footer">
+        <a class="btn" href="https://instagram.com/ayanrayrocks" target="_blank">
+          <span class="btn__label">See more on Instagram</span>
+          <span class="btn__fill stripes"></span>
+        </a>
+      </footer>
+    </section>
+
+  </main>
+</div>
+
+<small class="made-in-wales" data-config="footer.text">© MMXXVI. Building with scale & passion.</small>
+
+<script src="./assets/js/main.js"></script>
+<script src="./assets/js/configLoader.js"></script>
+<script src="./assets/js/galleryLoader.js"></script>
+
+<style>
+  .logo img { margin-left: 38px; filter: drop-shadow(0 2px 8px rgba(40,167,69,0.35)); }
+  .primary-links { list-style: none !important; padding: 0 !important; margin: 0 !important; }
+  .primary-links__item { display: block !important; position: relative !important; margin-bottom: 0.15em !important; }
+  .primary-links__link { font-size: 4rem; line-height: 5.2rem; }
+  @media(min-width:512px)and (min-height:700px){ .primary-links__link { font-size: 6rem; line-height: 1.25; } }
+</style>
+
+</body></html>
